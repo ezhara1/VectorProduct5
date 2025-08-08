@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VectorProduct Lookup</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>VectorProduct Lookup</h1>
+    <p>Search StatsCan vectors by product ID and fetch series data by vector ID.</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>1) Find vectors by Product ID</h2>
+      <form id="lookup-form">
+        <label for="productId">Product ID</label>
+        <input id="productId" name="productId" placeholder="e.g. 10100002" required />
+        <button type="submit">Lookup</button>
+      </form>
+      <div id="lookup-result" class="result"></div>
+    </section>
+
+    <section class="card">
+      <h2>2) Fetch data by Vector ID</h2>
+      <form id="vector-form">
+        <label for="vectorId">Vector ID</label>
+        <input id="vectorId" name="vectorId" placeholder="e.g. v86822802" required />
+        <label for="latestN">Latest N (optional)</label>
+        <input id="latestN" name="latestN" type="number" min="1" placeholder="e.g. 12" />
+        <button type="submit">Fetch</button>
+      </form>
+      <div id="vector-result" class="result"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Powered by Statistics Canada WDS via Netlify Functions</p>
+  </footer>
+
+  <script src="/script.js" type="module"></script>
+</body>
+</html>
